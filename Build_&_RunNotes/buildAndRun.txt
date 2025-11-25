@@ -1,0 +1,35 @@
+1. Build 
+  -> mvn clean install -DskipTests
+✔ Builds all microservices
+✔ Runs through the parent POM
+✔ Creates all JAR files in each module’s /target folder
+✔ No need to run Maven in every service manually
+
+2. Run all the jars / microservices
+  -> chmod +x start-all.sh
+./start-all.sh
+starting all services
+running all JARs one by one
+automating the startup process
+You don’t need to run every JAR manually.
+
+2. stop all the jars/ microservices
+Check running Java processes
+ps aux | grep java
+
+You will see output like:
+
+govind    1234   java -jar eureka_server.jar
+govind    1244   java -jar configservice.jar
+govind    1250   java -jar api_gateway.jar
+
+-> kill any specific id 
+   kill 1234(give the id)
+
+Each process has a PID (e.g., 1234, 1244, 1250).
+
+2️⃣ Kill all Java processes
+
+⚠️ This will stop ALL Java applications (including all microservices).
+
+killall java
